@@ -5,15 +5,15 @@ class welcome extends siteController {
 	function __construct(){
 		parent::__construct();
 		$this->load->model("postCategory_model","postcat",true);
-		$this->template->setLayout("page/layout");
+		$this->template->setLayout($this->getCurrentLayout());
 	}
 	
 	public function index()
 	{
 		$this->template->setJs(array("abc","ccc"));
 		$this->template->setJs("aaaa");
-		$this->template->header("page/html/header");
-		$this->template->footer("page/html/footer");
+		$this->template->header( $this->getCurrentTheme() .  "page/html/header");
+		$this->template->footer(  $this->getCurrentTheme() .  "page/html/footer");
 		$this->template->run();
 		//$where = array("status"=>"active");
 		//echo encode("123 ơi a â ấ");
