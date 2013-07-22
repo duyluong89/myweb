@@ -40,7 +40,7 @@ class template{
 		return $this->getDirectTheme() . "/css/";
 	}
 	function getJsFolder(){
-		return $this->getDirectTheme() . "/css/";
+		return $this->getDirectTheme() . "/js/";
 	}
 	
 	function setJs($file){

@@ -1,12 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class welcome extends CI_Controller {
+class welcome extends siteController {
 
 	function __construct(){
 		parent::__construct();
-		$this->load->helper("common");
 		$this->load->model("postCategory_model","postcat",true);
-		$this->load->library("template");
 		$this->template->setLayout("page/layout");
 	}
 	
