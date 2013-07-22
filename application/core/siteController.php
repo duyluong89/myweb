@@ -15,6 +15,7 @@ class siteController extends MY_Controller{
 	function getCurrentLayout(){
 		return $this->getCurrentTheme() . $this->themes->frontend_layoutName;
 	}
+	
 	function initTemplate(){
 		if(!is_null($this->themes) && is_object($this->themes)){
 			$this->template->setDirectTheme($this->themes->frontend_skin);
