@@ -12,8 +12,7 @@ class welcome extends siteController {
 	{
 		$this->template->setJs(array("abc","ccc"));
 		$this->template->setJs("aaaa");
-		$this->template->header( $this->getCurrentTheme() .  "page/html/header");
-		$this->template->footer(  $this->getCurrentTheme() .  "page/html/footer");
+		$this->template->setMain("page/1column");
 		$this->template->run();
 		//$where = array("status"=>"active");
 		//echo encode("123 ơi a â ấ");
@@ -21,4 +20,6 @@ class welcome extends siteController {
 		//die();
 		//$this->load->view('welcome_message');
 	}
+	
+	
 }

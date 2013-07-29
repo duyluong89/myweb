@@ -8,6 +8,7 @@ class template{
 	protected $title;
 	protected $header;
 	protected $footer;
+	protected $main;
 	
 	function __construct(){
 		$this->ci =& get_instance();
@@ -67,19 +68,32 @@ class template{
 	}
 	
 	function header($fileName="",$data = array()){
-		$this->header = $this->ci->load->view($fileName, $data);
+		$this->header = $this->ci->load->view($fileName, $data,TRUE);
 	}
 	
 	function footer($fileName="",$data = array()){
-		$this->footer = $this->ci->load->view($fileName, $data);
+		$this->footer = $this->ci->load->view($fileName, $data,TRUE);
 	}
 	
+	function setMain($templateMain,$data= array()){
+		if($templateMain =="")
+			$this->main = "";
+		else
+			$this->main = $this->ci->load->view($this->ci->getCurrentTheme() . $templateMain,$data,TRUE);
+	}
+	
+	function setBlock($name,$template,$data=array()){
+		$mainData[$name] = $this->ci->load->view($template,$data,TRUE);
+		
+		
+	}
 	function run($data = array()){
 		
 		$data['js'] = $this->js;
 		$data['css'] = $this->css;
 		$data['header'] = $this->header;
 		$data['footer']  = $this->footer;
+		$data['main'] = $this->main;
 		$this->ci->parser->parse($this->getLayout(),$data);
 	}
 }

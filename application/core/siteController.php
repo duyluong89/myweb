@@ -20,6 +20,8 @@ class siteController extends MY_Controller{
 		if(!is_null($this->themes) && is_object($this->themes)){
 			$this->template->setDirectTheme($this->themes->frontend_skin);
 			$this->template->setLayout($this->themes->frontend_layout . DS . $this->themes->frontend_layoutName);
+			$this->template->header( $this->getCurrentTheme() .  "page/html/header");
+			$this->template->footer(  $this->getCurrentTheme() .  "page/html/footer");
 		}
 	}
 }
