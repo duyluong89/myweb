@@ -9,6 +9,7 @@ class template{
 	protected $header;
 	protected $footer;
 	protected $main;
+	protected $_mainData;
 	
 	function __construct(){
 		$this->ci =& get_instance();
@@ -19,6 +20,7 @@ class template{
 		$this->layout = "";
 		$this->header = "";
 		$this->footer = "";
+		$this->_mainData =  array();
 	}
 	
 	function setLayout($_layout){
@@ -78,17 +80,29 @@ class template{
 	function setMain($templateMain,$data= array()){
 		if($templateMain =="")
 			$this->main = "";
-		else
+		else{
+			$data = array_merge($data,$this->_mainData);
 			$this->main = $this->ci->load->view($this->ci->getCurrentTheme() . $templateMain,$data,TRUE);
+		}
+			
+	}
+	
+	function getMain(){
+		$this->main =  $template;
+		return $this->main;
 	}
 	
 	function setBlock($name,$template,$data=array()){
-		$mainData[$name] = $this->ci->load->view($template,$data,TRUE);
-		
+		$name = strtolower($name);
+		if(array_key_exists($name, $this->_mainData)){
+		$this->_mainData[$name] = $this->_mainData[$name] . $this->ci->load->view($this->ci->getCurrentTheme() . $template,$data,TRUE);	
+		}else{
+			$this->_mainData[$name] = $this->ci->load->view($this->ci->getCurrentTheme() . $template,$data,TRUE);
+		}
 		
 	}
+	
 	function run($data = array()){
-		
 		$data['js'] = $this->js;
 		$data['css'] = $this->css;
 		$data['header'] = $this->header;

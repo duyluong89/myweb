@@ -12,6 +12,10 @@ class welcome extends siteController {
 	{
 		$this->template->setJs(array("abc","ccc"));
 		$this->template->setJs("aaaa");
+		$this->template->setBlock("login","user/login");
+		$this->template->setBlock("login","user/list");
+		
+		// lastest loader
 		$this->template->setMain("page/1column");
 		$this->template->run();
 		//$where = array("status"=>"active");

@@ -1,1 +1,1 @@
-1 colum
+<?php echo $login ?>

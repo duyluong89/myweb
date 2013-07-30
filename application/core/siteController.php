@@ -3,8 +3,9 @@ class siteController extends MY_Controller{
 	protected $_currentLayout;
 	function __construct(){
 		parent::__construct();
-		$this->initTemplate();
 		$this->_currentLayout ="";
+		$this->initTemplate();
+		
 	}
 	
 	function getCurrentTheme(){
@@ -19,7 +20,7 @@ class siteController extends MY_Controller{
 	function initTemplate(){
 		if(!is_null($this->themes) && is_object($this->themes)){
 			$this->template->setDirectTheme($this->themes->frontend_skin);
-			$this->template->setLayout($this->themes->frontend_layout . DS . $this->themes->frontend_layoutName);
+			$this->template->setLayout($this->getCurrentLayout());
 			$this->template->header( $this->getCurrentTheme() .  "page/html/header");
 			$this->template->footer(  $this->getCurrentTheme() .  "page/html/footer");
 		}
