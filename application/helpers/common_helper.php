@@ -44,3 +44,12 @@ function t($key){
 		return $ci->lang->line($key);
 	else return $key;
 }
+
+function ispost()
+{
+  if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+          return true;
+  }else{
+      return false;
+  }
+}

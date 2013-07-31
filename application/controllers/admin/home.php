@@ -12,12 +12,13 @@ class home extends adminController{
 	}
 	
 	function login(){
-		if($_POST){
+		if(ispost()){
 			echo "adsd";
 		}else{
 			$this->load->view($this->getCurrentTheme() ."user/login");
 		}
 	}
+	
 	
 	
 }

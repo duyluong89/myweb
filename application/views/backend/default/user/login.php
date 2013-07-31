@@ -71,10 +71,10 @@
             <div class="block-body">
                 <form method="post" action="<?php echo site_url("admin/home/login")?>">
                     <label><?php echo t("Username")?></label>
-                    <input type="text" class="span12">
+                    <input type="text" class="span12" name="username">
                     <label><?php echo t("Password")?></label>
-                    <input type="password" class="span12">
-                    <button class="btn btn-primary pull-right"><?php echo t("Sign In")?></button>
+                    <input type="password" class="span12" name="password">
+                    <input type="submit" class="btn btn-primary pull-right" value="<?php echo t("Sign In")?>" />
                     <label class="remember-me"><input type="checkbox"> <?php echo t("Remember me")?></label>
                     <div class="clearfix"></div>
                 </form>
