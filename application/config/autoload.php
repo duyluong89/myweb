@@ -64,7 +64,7 @@ $autoload['libraries'] = array('database', 'session','parser');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array();
+$autoload['helper'] = array('language','url','file','html');
 
 
 /*
@@ -96,7 +96,7 @@ $autoload['config'] = array();
 |
 */
 
-$autoload['language'] = array();
+$autoload['language'] = array('system');
 
 
 /*

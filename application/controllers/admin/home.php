@@ -6,6 +6,18 @@ class home extends adminController{
 	}
 	
 	function index(){
+		
+		//$this->template->setMain("page/1column"); // default call 1column
 		$this->template->run();
 	}
+	
+	function login(){
+		if($_POST){
+			echo "adsd";
+		}else{
+			$this->load->view($this->getCurrentTheme() ."user/login");
+		}
+	}
+	
+	
 }

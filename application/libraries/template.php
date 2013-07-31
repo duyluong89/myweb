@@ -21,6 +21,7 @@ class template{
 		$this->header = "";
 		$this->footer = "";
 		$this->_mainData =  array();
+		$this->main="";
 	}
 	
 	function setLayout($_layout){
@@ -70,11 +71,13 @@ class template{
 	}
 	
 	function header($fileName="",$data = array()){
-		$this->header = $this->ci->load->view($fileName, $data,TRUE);
+		$data = array_merge($data,$this->_mainData);
+		$this->header = $this->ci->load->view($this->ci->getCurrentTheme() . $fileName, $data,TRUE);
 	}
 	
 	function footer($fileName="",$data = array()){
-		$this->footer = $this->ci->load->view($fileName, $data,TRUE);
+		$data = array_merge($data,$this->_mainData);
+		$this->footer = $this->ci->load->view($this->ci->getCurrentTheme() . $fileName, $data,TRUE);
 	}
 	
 	function setMain($templateMain,$data= array()){
@@ -108,6 +111,7 @@ class template{
 		$data['header'] = $this->header;
 		$data['footer']  = $this->footer;
 		$data['main'] = $this->main;
+		$data = array_merge($data,$this->_mainData);
 		$this->ci->parser->parse($this->getLayout(),$data);
 	}
 }

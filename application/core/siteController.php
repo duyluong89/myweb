@@ -21,8 +21,8 @@ class siteController extends MY_Controller{
 		if(!is_null($this->themes) && is_object($this->themes)){
 			$this->template->setDirectTheme($this->themes->frontend_skin);
 			$this->template->setLayout($this->getCurrentLayout());
-			$this->template->header( $this->getCurrentTheme() .  "page/html/header");
-			$this->template->footer(  $this->getCurrentTheme() .  "page/html/footer");
+			$this->template->header("page/html/header");
+			$this->template->footer("page/html/footer");
 		}
 	}
 }

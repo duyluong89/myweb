@@ -38,3 +38,9 @@ function encode($str){
 	return $str;
 }
 
+function t($key){
+	$ci =& get_instance();
+	if($ci->lang->line($key) != '')
+		return $ci->lang->line($key);
+	else return $key;
+}
