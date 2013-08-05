@@ -13,7 +13,8 @@ class home extends adminController{
 	
 	function login(){
 		if(ispost()){
-			echo "adsd";
+			
+			redirect(site_url('admin'));
 		}else{
 			$this->load->view($this->getCurrentTheme() ."user/login");
 		}
