@@ -1,7 +1,7 @@
 <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i><?php echo t("Dashboard")?></a>
 <ul id="dashboard-menu" class="nav nav-list collapse in">
     <li><a href="<?php echo site_url('admin')?>"><?php echo t("Home")?></a></li>
-    <li ><a href="users.html"><?php echo t("Static Block")?></a></li>
+    <li ><a href="<?php echo site_url('admin/block')?>"><?php echo t("Static Block")?></a></li>
     <li ><a href="user.html"><?php echo t("Cms Page")?></a></li>
     <li ><a href="media.html"><?php echo t("Media")?></a></li>
     <li ><a href="calendar.html"><?php echo t("Configuration")?></a></li>
