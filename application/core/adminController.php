@@ -28,6 +28,12 @@ class adminController extends MY_Controller{
 			$this->template->setCurentJsFolder("public" . DS . $this->getCurrentTheme());
 		}
 	}
+
+	function is_login(){
+		if($this->session->userdata("userAdmin"))
+			return true;
+		return false;
+	}
 }
 
 ?>

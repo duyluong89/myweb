@@ -4,6 +4,9 @@ class block extends adminController{
 		parent::__construct();
 		$this->load->model("block_model","blockModel",TRUE);
 		$this->template->setJs("site.modules.block");
+		if(!$this->is_login()){
+
+		}
 	}
 	
 	function index(){
@@ -30,5 +33,14 @@ class block extends adminController{
 			throw $ex;
 			
 		}
+	}
+
+	function add(){
+
+		if(ispost()){
+
+		}
+		$this->template->setMain("block/add");
+		$this->template->run();
 	}
 }

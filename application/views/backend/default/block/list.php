@@ -10,7 +10,7 @@
  <div class="container-fluid">
     <div class="row-fluid">
 	    <div class="btn-toolbar">
-		    <a href="#" class="btn btn-primary"><i class="icon-plus"></i> <?php echo t('New Block')?></a>
+		    <a href="<?php echo site_url('admin/block/add')?>" class="btn btn-primary"><i class="icon-plus"></i> <?php echo t('New Block')?></a>
 		    <button class="btn">Import</button>
 		    <button class="btn">Export</button>
 			  <div class="btn-group">
