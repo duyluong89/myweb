@@ -10,6 +10,7 @@ class template{
 	protected $footer;
 	protected $main;
 	protected $_mainData;
+	protected $linkJs;
 	
 	function __construct(){
 		$this->ci =& get_instance();
@@ -22,6 +23,7 @@ class template{
 		$this->footer = "";
 		$this->_mainData =  array();
 		$this->main="";
+		$this->linkJs = "";
 	}
 	
 	function setLayout($_layout){
@@ -44,16 +46,20 @@ class template{
 		return $this->getDirectTheme() . "/css/";
 	}
 	function getJsFolder(){
-		return $this->getDirectTheme() . "/js/";
+		return base_url() . $this->linkJs ."js/";
 	}
-	
+	function setCurentJsFolder($_linkJs){
+		$this->linkJs = $_linkJs;
+	}
+
+
 	function setJs($file){
 		if(is_array($file)){
 			foreach ($file as $f){
 				$this->js .= '<script type="text/javascript" src="'.$this->getJsFolder() . $f .'.js"></script>';
 			}
 		}else{
-			$this->js .= '<script type="text/javascript" src="'.$this->getJsFolder() . $file .'.js"></script>';
+			$this->js .= '<script type="text/javascript" src="' . $this->getJsFolder() . $file .'.js"></script>';
 		}
 		
 	}

@@ -25,6 +25,7 @@ class adminController extends MY_Controller{
 			$this->template->header("page/html/header");
 			$this->template->footer("page/html/footer");
 			$this->template->setMain("page/1column");
+			$this->template->setCurentJsFolder("public" . DS . $this->getCurrentTheme());
 		}
 	}
 }

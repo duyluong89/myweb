@@ -4,9 +4,11 @@ class MY_Controller extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->helper("common");
+		$this->load->helper("class.define");
 		$this->load->library("template");
 		$this->load->model("systemtemplate_model","theme",true);
 		$this->themes = $this->getTheme();
+
 	}
 	
 	function getTheme(){

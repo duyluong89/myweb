@@ -10,7 +10,7 @@
  <div class="container-fluid">
     <div class="row-fluid">
 	    <div class="btn-toolbar">
-		    <button class="btn btn-primary"><i class="icon-plus"></i> New User</button>
+		    <a href="#" class="btn btn-primary"><i class="icon-plus"></i> <?php echo t('New Block')?></a>
 		    <button class="btn">Import</button>
 		    <button class="btn">Export</button>
 			  <div class="btn-group">
@@ -22,74 +22,29 @@
     <table class="table">
       <thead>
         <tr>
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+          <th style="width: 50px;">#</th>
+          <th style="width: 50px;"><?php echo t("Id")?></th>
+          <th><?php echo t("Block Name");?></th>
+          <th style="width: 50px;"><?php echo t("Status")?></th>
           <th style="width: 26px;"></th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Tompson</td>
-          <td>the_mark7</td>
+        <?php $stt = 0;?>
+        <?php foreach ($listBlock as $key => $b):?>
+          <tr>
+          <td><?php echo ++$stt?></td>
+          <td><?php echo $b->id?></td>
+          <td><?php echo $b->name?></td>
+          <td class="txtc"><a href="javascript:void(0);" id="change<?php echo $b->id?>" onclick="block.changeStatus(<?php echo $b->id?>,<?php echo $b->active?>)" ><?php echo ($b->active==1) ? "<i class='icon-ok-sign'></i>" : "<i class='icon-remove-circle'></i>"?><a/></td>
           <td>
               <a href="user.html"><i class="icon-pencil"></i></a>
               <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
           </td>
         </tr>
-        <tr>
-          <td>2</td>
-          <td>Ashley</td>
-          <td>Jacobs</td>
-          <td>ash11927</td>
-          <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Audrey</td>
-          <td>Ann</td>
-          <td>audann84</td>
-          <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>John</td>
-          <td>Robinson</td>
-          <td>jr5527</td>
-          <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>Aaron</td>
-          <td>Butler</td>
-          <td>aaron_butler</td>
-          <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>Chris</td>
-          <td>Albert</td>
-          <td>cab79</td>
-          <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-          </td>
-        </tr>
+        
+        <?php endforeach?>
+        
       </tbody>
     </table>
 </div>

@@ -42,6 +42,7 @@ $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 $route['admin'] = "admin/home";
 $route['admin/login'] = "admin/home/login";
+$route['admin/block/changeStatus/(:num)/(:nume)'] = "admin/block/changeStatus/$1/$2";
 
 
 /* End of file routes.php */

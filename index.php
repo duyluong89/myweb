@@ -167,6 +167,8 @@ if (defined('ENVIRONMENT'))
 	define('EXT', '.php');
 	
 	define('DS', '/');
+
+	
 	
 	// Path to the system folder
 	define('BASEPATH', str_replace("\\", "/", $system_path));
