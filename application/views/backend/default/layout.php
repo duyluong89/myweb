@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<?php echo base_url()?>public/backend/default/lib/font-awesome/css/font-awesome.css">
 
     <script src="<?php echo base_url()?>public/backend/default/lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url()?>lib/ckeditor/ckeditor.js" type="text/javascript"></script>
     <?php echo $js?>
     <!-- Demo page code -->
 

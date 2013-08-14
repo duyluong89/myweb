@@ -38,7 +38,15 @@ class block extends adminController{
 	function add(){
 
 		if(ispost()){
-
+			$dataPost = array(
+				'name'=>$this->input->post("name"),
+				'content'=>$this->input->post("content"),
+				'active'=>$this->input->post("active")
+				);
+			if($this->blockModel->insert($dataPost)){
+				redirect(site_url('admin/block'));
+				return true;
+			}
 		}
 		$this->template->setMain("block/add");
 		$this->template->run();

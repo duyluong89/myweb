@@ -1,6 +1,6 @@
 block = {
 	init: function(){
-		
+		block.add();
 	},
 	show: function(){
 		alert("show");
@@ -16,6 +16,11 @@ block = {
 			}else{
 				alert(msg);
 			}
+		});
+	},
+	add: function(){
+		$("#save").click(function(){
+			$("form#addBlock").submit();
 		});
 	}
 }
