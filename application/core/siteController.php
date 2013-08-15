@@ -25,4 +25,8 @@ class siteController extends MY_Controller{
 			$this->template->footer("page/html/footer");
 		}
 	}
+
+	function loadBlock(){
+		
+	}
 }

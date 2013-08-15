@@ -10,10 +10,10 @@ class welcome extends siteController {
 	
 	public function index()
 	{
-		$this->template->setJs(array("abc","ccc"));
-		$this->template->setJs("aaaa");
-		$this->template->setBlock("login","user/login");
-		$this->template->setBlock("login","user/list");
+		//$this->template->setJs(array("abc","ccc"));
+		//$this->template->setJs("aaaa");
+		//$this->template->setBlock("login","user/login");
+		//$this->template->setBlock("login","user/list");
 		
 		// lastest loader
 		$this->template->setMain("page/1column");
@@ -24,6 +24,7 @@ class welcome extends siteController {
 		//die();
 		//$this->load->view('welcome_message');
 	}
+	
 	
 	
 }
