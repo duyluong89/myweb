@@ -10,4 +10,5 @@
 
     More info at: http://lesselements.com
 -----------------------------------------------------*/
-.table tbody td.txtc{text-align: center;}
+.table tbody td.txtc{text-align: center;width: 50px;}
+.notifications{margin: 3px 10px;border-radius: 3px;}

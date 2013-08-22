@@ -73,6 +73,7 @@
 
 
     <script src="<?php echo base_url()?>public/backend/default/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="<?php echo base_url()?>public/backend/default/js/bootstrap-notify.js"></script>
     <script type="text/javascript">
         $("[rel=tooltip]").tooltip();
         $(function() {

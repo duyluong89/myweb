@@ -13,6 +13,7 @@
     <li ><a href="sign-in.html"><?php echo t("Sign In")?></a></li>
     <li ><a href="sign-up.html"><?php echo t("Sign Up")?></a></li>
     <li ><a href="reset-password.html"><?php echo t("Reset Password")?></a></li>
+    <li ><a href="<?php echo site_url('admin/user')?>"><?php echo t("User Management")?></a></li>
 </ul>
 
 <a href="#sales-menu" class="nav-header collapsed" data-toggle="collapse"><i class="icon-briefcase"></i><?php echo t("Sales")?><i class="icon-chevron-up"></i></a>

@@ -51,4 +51,35 @@ class block extends adminController{
 		$this->template->setMain("block/add");
 		$this->template->run();
 	}
+
+	function edit($id=null){
+		if(ispost()){
+			$id= $this->input->post("id");
+			$dataPost = array(
+				'name'=>$this->input->post("name"),
+				'content'=>$this->input->post("content"),
+				'active'=>$this->input->post("active")
+				);
+			if($this->blockModel->update_by_id($id,$dataPost)){
+				redirect(site_url('admin/block/index'));
+			}
+		}
+		$block = $this->blockModel->get_by_id($id);
+		if(is_null($block)){redirect(site_url('admin/block/index'));}
+		$data = array(
+			'block'=>$block
+			);
+		$this->template->setMain("block/edit",$data);
+		$this->template->run();	
+	}
+	function delete(){
+		try{
+			$id = $this->input->post("blockId");
+			if($this->blockModel->delete_by_id($id)){
+				echo SUCCESS;
+			}else echo ERROR;
+		}catch(Exception $ex){
+			echo ERROR;
+		}
+	}
 }

@@ -6,7 +6,7 @@
         <li><a href="<?php echo site_url("admin")?>">Home</a> <span class="divider">/</span></li>
         <li class="active">block</li>
     </ul>
-    
+    <div class='notifications top-left'></div>
  <div class="container-fluid">
     <div class="row-fluid">
 	    <div class="btn-toolbar">
@@ -32,14 +32,14 @@
       <tbody>
         <?php $stt = 0;?>
         <?php foreach ($listBlock as $key => $b):?>
-          <tr>
+          <tr id="<?php echo $b->id?>row">
           <td><?php echo ++$stt?></td>
           <td><?php echo $b->id?></td>
           <td><?php echo $b->name?></td>
-          <td class="txtc"><a href="javascript:void(0);" id="change<?php echo $b->id?>" onclick="block.changeStatus(<?php echo $b->id?>,<?php echo $b->active?>)" ><?php echo ($b->active==1) ? "<i class='icon-ok-sign'></i>" : "<i class='icon-remove-circle'></i>"?><a/></td>
+          <td class="txtc"><a href="javascript:void(0);"  rel="tooltip" data-original-title="<?php echo t("Change status")?>" id="change<?php echo $b->id?>" onclick="block.changeStatus(<?php echo $b->id?>,<?php echo $b->active?>)" ><?php echo ($b->active==1) ? "<i class='icon-ok-sign'></i>" : "<i class='icon-remove-circle'></i>"?><a/></td>
           <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+              <a href="<?php echo site_url('admin/block/edit/' . $b->id)?>"  rel="tooltip" data-original-title="<?php echo t("Edit block")?>"><i class="icon-pencil"></i></a>
+              <a href="#myModal" role="button" data-toggle="modal" data-id="<?php echo $b->id?>" class="remove"  rel="tooltip" data-original-title="<?php echo t("Remove block")?>"><i class="icon-remove"></i></a>
           </td>
         </tr>
         
@@ -48,7 +48,7 @@
       </tbody>
     </table>
 </div>
-<div class="pagination">
+<!-- <div class="pagination">
     <ul>
         <li><a href="#">Prev</a></li>
         <li><a href="#">1</a></li>
@@ -57,7 +57,7 @@
         <li><a href="#">4</a></li>
         <li><a href="#">Next</a></li>
     </ul>
-</div>
+</div> -->
 
 <div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
