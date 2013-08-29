@@ -25,7 +25,7 @@ class user extends adminController{
 
 	function add(){
 		if(ispost()){
-
+			
 		}
 
 		$this->template->setMain("user/add");
